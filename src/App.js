@@ -1,7 +1,8 @@
 import 'react-native-gesture-handler'
 import React, { useEffect } from 'react'
-import { View, Text } from 'react-native'
 import SplashScreen from 'react-native-splash-screen'
+import { Provider as StoreProvider } from 'react-redux'
+import store from './store/createStore'
 
 export default function App() {
   useEffect(() => {
@@ -9,8 +10,7 @@ export default function App() {
   }, [])
 
   return (
-    <View>
-      <Text></Text>
-    </View>
+    <StoreProvider store={store}>
+    </StoreProvider>
   )
 }
