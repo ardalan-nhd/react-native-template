@@ -1,23 +1,28 @@
 import React from 'react'
-import { StatusBar, View } from 'react-native'
-import { makeStyles } from 'react-native-elements'
+import { StatusBar, View, StyleSheet } from 'react-native'
+import { ThemeProvider } from 'react-native-elements'
+import { NavigationContainer } from '@react-navigation/native'
+import { createTheme } from './helpers'
 
 export default function Start() {
-    const styles = useStyles()
+    const theme = createTheme()
     return (
         <>
             <StatusBar
                 backgroundColor="transparent"
                 translucent />
-            <View style={styles.container}>
-            </View>
+            <ThemeProvider> {/** react native elements theme */}
+                <NavigationContainer> {/* react navigation container */}
+                    <View style={[styles.container, { backgroundColor: palette.background }]}>
+                    </View>
+                </NavigationContainer>
+            </ThemeProvider>
         </>
     )
 }
 
-const useStyles = makeStyles((theme) => ({
+const styles = StyleSheet.create({
     container: {
-        backgroundColor: theme.colors.background,
         flex: 1
     }
-}))
+})

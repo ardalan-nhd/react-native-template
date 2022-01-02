@@ -6,8 +6,6 @@ import store from './store/createStore'
 import { I18nManager } from 'react-native';
 import RNRestart from 'react-native-restart'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
-import { ThemeProvider } from 'react-native-elements'
-import { NavigationContainer } from '@react-navigation/native'
 import Start from './Start'
 
 export default function App() {
@@ -26,11 +24,7 @@ export default function App() {
   return (
     <StoreProvider store={store}> { /* Redux store provider  */}
       <SafeAreaProvider> {/* safe area provider to make use of it in <SafeAreaView /> component */}
-        <ThemeProvider> {/** react native elements theme */}
-          <NavigationContainer> {/* react navigation container */}
-            <Start /> {/* the entry point to our app */}
-          </NavigationContainer>
-        </ThemeProvider>
+        <Start /> {/* the entry point to our app */}
       </SafeAreaProvider>
     </StoreProvider>
   )
