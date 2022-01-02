@@ -3,7 +3,7 @@
 
 const createTheme = (palette) => ({
     colors: { ...palette },
-    typography: {
+    typography: { /* different typography variants (ONLY FONT RELATED STYLES) */
         default: {
             fontSize: 16,
             letterSpacing: -0.3,
@@ -64,7 +64,7 @@ const createTheme = (palette) => ({
             backgroundColor: palette.secondary
         }
     },
-    Typography: {
+    Typography: { /* All the styles and props for Typography component. Except for font related styles */
         containerStyle: {
             alignItems: 'center'
         }
