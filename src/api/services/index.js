@@ -1,1 +1,0 @@
-// We put API services in this folder. Such as sending and receiving data
